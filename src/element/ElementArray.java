@@ -1,9 +1,6 @@
-package core;
+package element;
 
-import javafx.animation.*;
-import javafx.scene.paint.Color;
-import javafx.util.Duration;
-
+import step.Steps;
 
 
 public class ElementArray {
@@ -76,24 +73,13 @@ public class ElementArray {
         return MAX;
     }
 
-    public void moveY(int i, int y) {
-        TranslateTransition tt1 = new TranslateTransition();
-        tt1.setDuration(Duration.seconds(Common.DURATION));
-        tt1.setByY(- Common.SCENE_HEIGHT * 0.7 * y / getMax().getValue());
-        tt1.setNode(elements[i]);
+    // moveY() replaced
+    public void moveToBufferArray(int index, int bufferIndex) {
+        steps.addBucketStep(elements[index], bufferIndex);
+    }
 
-        ParallelTransition pt1 = new ParallelTransition();
-        pt1.getChildren().add(tt1);
-
-        TranslateTransition tt2 = new TranslateTransition();
-        tt2.setDuration(Duration.seconds(Common.DURATION));
-        tt2.setByY(Common.SCENE_HEIGHT * 0.7 * y / getMax().getValue());
-        tt2.setNode(elements[i]);
-
-        ParallelTransition pt2 = new ParallelTransition();
-        pt2.getChildren().add(tt2);
-
-        steps.addBucketStep(pt1, pt2, elements[i]);
+    public void moveFromBufferArray(int index, int bufferIndex) {
+        steps.addBucketStep(bufferIndex, elements[index]);
     }
 
     public void reposition() {

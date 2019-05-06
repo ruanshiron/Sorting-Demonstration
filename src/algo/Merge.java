@@ -1,6 +1,6 @@
-package algos;
+package algo;
 
-import core.ElementArray;
+import element.ElementArray;
 
 public class Merge implements Algorithm {
     private static Merge ourInstance = new Merge();

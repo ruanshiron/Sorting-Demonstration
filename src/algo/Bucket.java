@@ -1,7 +1,7 @@
-package algos;
+package algo;
 
-import core.Element;
-import core.ElementArray;
+import element.Element;
+import element.ElementArray;
 
 public class Bucket implements Algorithm {
     private static Bucket ourInstance = new Bucket();
@@ -25,7 +25,7 @@ public class Bucket implements Algorithm {
             bucketElement[arr.getElementAt(i).getValue()][bucket[arr.getElementAt(i).getValue()]] = arr.getElementAt(i);
             bucket[arr.getElementAt(i).getValue()] = bucket[arr.getElementAt(i).getValue()] + 1;
 
-            arr.moveY(i, maxVal.getValue() - arr.getElementAt(i).getValue());
+            arr.moveToBufferArray(i, maxVal.getValue() - arr.getElementAt(i).getValue());
         }
 
         int outPos=0;
@@ -45,7 +45,7 @@ public class Bucket implements Algorithm {
         }
 
         for (int i=0; i< arr.length(); i++) {
-            arr.moveY(i, - maxVal.getValue() + arr.getElementAt(i).getValue());
+            arr.moveFromBufferArray(i, -maxVal.getValue() + arr.getElementAt(i).getValue());
         }
 
         System.out.println();

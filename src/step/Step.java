@@ -1,5 +1,6 @@
-package core;
+package step;
 
+import element.Element;
 import javafx.animation.Animation;
 import javafx.scene.paint.Color;
 
@@ -9,11 +10,11 @@ public abstract class Step {
 
     private Animation reverse;
 
-    private String text;
-
     private Step next;
 
     private Step previous;
+
+    String text;
 
     Element node1;
 
@@ -25,18 +26,27 @@ public abstract class Step {
         this.text = text;
     }
 
-    Step (Animation animation, Animation reverse, String text, Step previous, Step next) {
-        this.animation = animation;
-        this.reverse = reverse;
-        this.text = text;
-        this.next = next;
-        this.previous = previous;
+    Step (Element node1, Element node2) {
+        this.node1 = node1;
+        this.node2 = node2;
+
     }
 
+    public void initAnimationAndReverse() {
+        this.animation = makeAnimation();
+        this.reverse = makeReverse();
+    }
 
     abstract void setElementState();
 
-    abstract void reverseElementState();
+    abstract Animation makeAnimation();
+
+    abstract Animation makeReverse();
+
+    void reverseElementState() {
+        node1.setFill(Color.BLACK);
+        node2.setFill(Color.BLACK);
+    }
 
     public void playOne(Closure onFinished) {
         if (previous!=null) previous.reverseElementState();

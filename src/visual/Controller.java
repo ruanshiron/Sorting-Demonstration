@@ -1,32 +1,23 @@
 package visual;
 
-import algos.Bubble;
-import algos.Bucket;
-import algos.Merge;
-import algos.Selection;
+import algo.Bubble;
+import algo.Bucket;
+import algo.Merge;
+import algo.Selection;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXSlider;
-import com.jfoenix.controls.JFXTextField;
-import core.Algorithm;
-import core.Common;
-import core.Element;
-import core.ElementArray;
+import algo.Algorithm;
+import element.Common;
+import element.ElementArray;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.util.Duration;
 
-import java.awt.*;
-import java.lang.reflect.Array;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -82,26 +73,31 @@ public class Controller implements Initializable {
         comboBox.getSelectionModel().select(0);
         numberSlider.setValue(9);
         speedSlider.setValue(4);
-
+        stepLabel.setText("");
     }
 
     public void handleResetClicked() {
-        if (array != null)
+        if (array != null) {
             fatherPane.getChildren().removeAll(array.getAll());
-
-        int NoE = (int)numberSlider.getValue();
-        int Speed = (int)speedSlider.getValue();
-
-        Common.DURATION = Common.DURATION_MAX / Speed;
-
-        array = new ElementArray(NoE);
-        array.steps.label = stepLabel;
-        fatherPane.getChildren().addAll(array.getAll());
-
-        if (comboBox.getValue() instanceof Algorithm) {
-            comboBox.getValue().sort(array);
+            array.steps.stop();
+            array = null;
         }
 
+
+        int numberOfElement = (int)numberSlider.getValue();
+        int speed = (int)speedSlider.getValue();
+
+        Common.DURATION = Common.DURATION_MAX / speed;
+
+        array = new ElementArray(numberOfElement);
+
+        array.steps.setLabel(stepLabel);
+
+        fatherPane.getChildren().addAll(array.getAll());
+
+        comboBox.getValue().sort(array);
+
+        pressedResetState();
     }
 
     public void handleBackwardClicked () {
@@ -116,24 +112,38 @@ public class Controller implements Initializable {
     public void handlePlayClicked() {
         if (array.steps.isPlaying) {
             array.steps.pause();
-            playButton.setText("PLAY");
-            backwardButton.setDisable(false);
-            forwardButton.setDisable(false);
+            pressedPauseState();
             return;
         }
 
-        playButton.setText("PAUSE");
-        backwardButton.setDisable(true);
-        forwardButton.setDisable(true);
+        pressedPlayState();
+
         array.steps.play();
     }
 
     public void handleStopClicked() {
         array.steps.stop();
+
+        pressedPauseState();
+
+        array.reposition();
+    }
+
+    private void pressedPauseState() {
         playButton.setText("PLAY");
         backwardButton.setDisable(false);
         forwardButton.setDisable(false);
+    }
 
-        array.reposition();
+    private void pressedPlayState() {
+        playButton.setText("PAUSE");
+        backwardButton.setDisable(true);
+        forwardButton.setDisable(true);
+    }
+
+    private void pressedResetState() {
+        playButton.setText("PLAY");
+        backwardButton.setDisable(false);
+        forwardButton.setDisable(false);
     }
 }

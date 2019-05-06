@@ -1,6 +1,6 @@
-package algos;
+package algo;
 
-import core.ElementArray;
+import element.ElementArray;
 
 public class Bubble implements Algorithm {
     private static Bubble Instance = new Bubble();

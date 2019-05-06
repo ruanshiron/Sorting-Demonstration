@@ -1,4 +1,4 @@
-package core;
+package element;
 
 public class Common {
     public static final int WIDTH = 20;

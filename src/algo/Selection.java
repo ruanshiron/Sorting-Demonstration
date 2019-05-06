@@ -1,6 +1,6 @@
-package algos;
+package algo;
 
-import core.ElementArray;
+import element.ElementArray;
 
 public class Selection implements Algorithm {
     private static Selection ourInstance = new Selection();
@@ -17,7 +17,7 @@ public class Selection implements Algorithm {
         for (int i = 0; i < length; i++) {
             int minIndex = i;
             for (int j = i + 1; j < length; j++) {
-                if (array.compare(j, minIndex) < 0)
+                if (array.compare(j, minIndex) > 0)
                     minIndex = j;
             }
             array.swap(i, minIndex);

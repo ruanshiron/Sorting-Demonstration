@@ -1,15 +1,11 @@
-package core;
+package element;
 
-import javafx.scene.effect.DropShadow;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 
 public class Element extends Rectangle implements Comparable {
     private int value;
 
     private int index;
-
-    private STATE state = STATE.NONE;
 
     public int getIndex() {
         return index;
@@ -34,22 +30,4 @@ public class Element extends Rectangle implements Comparable {
         return - value + ((Element)o).value;
     }
 
-    public void setValue(int value) {
-        this.value = value;
-    }
-
-    public void updateState() {
-        switch (state) {
-            case DONE:
-                break;
-            case COMPARING:
-                break;
-            default:
-                break;
-        }
-    }
-
-    enum STATE {
-        COMPARING, DONE, NONE
-    }
 }

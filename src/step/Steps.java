@@ -1,10 +1,8 @@
-package core;
+package step;
 
+import element.Element;
 import javafx.animation.*;
 import javafx.scene.control.Label;
-import javafx.scene.paint.Color;
-import javafx.util.Duration;
-
 import java.util.LinkedList;
 
 public class Steps {
@@ -14,10 +12,14 @@ public class Steps {
 
     public boolean isPlaying = false;
 
-    public Label label;
+    private Label label;
 
-    Steps () {
+    public Steps () {
         steps = new LinkedList<>();
+    }
+
+    public void setLabel(Label label) {
+        this.label = label;
     }
 
     public void add(Step step) {
@@ -39,67 +41,27 @@ public class Steps {
 
     public void addSwapStep(Element node1, Element node2) {
 
-        // Swap Animation
-        TranslateTransition tt1 = new TranslateTransition();
-        tt1.setDuration(Duration.seconds(Common.DURATION));
-        tt1.setByX(Common.DISTANCE * (node1.getIndex() - node2.getIndex()));
-        tt1.setNode(node1);
-
-        TranslateTransition tt2 = new TranslateTransition();
-        tt2.setDuration(Duration.seconds(Common.DURATION));
-        tt2.setByX(Common.DISTANCE * (- node1.getIndex() + node2.getIndex()));
-        tt2.setNode(node2);
-
-        ParallelTransition pt = new ParallelTransition();
-        pt.getChildren().addAll(tt1, tt2);
-
-
-        // Swap Reverse
-        TranslateTransition tt3 = new TranslateTransition();
-        tt3.setDuration(Duration.seconds(Common.DURATION));
-        tt3.setByX(- Common.DISTANCE * (node1.getIndex() - node2.getIndex()));
-        tt3.setNode(node1);
-
-        TranslateTransition tt4 = new TranslateTransition();
-        tt4.setDuration(Duration.seconds(Common.DURATION));
-        tt4.setByX(- Common.DISTANCE * (- node1.getIndex() + node2.getIndex()));
-        tt4.setNode(node2);
-
-        ParallelTransition pt2 = new ParallelTransition();
-        pt2.getChildren().addAll(tt3, tt4);
-
-        // Step init
-
-        SwapStep s = new SwapStep(pt, pt2, "SWAP    [" + node1.getIndex() + "] & ["+ node2.getIndex() + "]");
-        s.setNodes(node1, node2);
+        SwapStep s = new SwapStep(node1, node2);
 
         add(s);
     }
 
     public void addCompareStep(Element node1, Element node2) {
 
-        FillTransition ft1 = new FillTransition();
-        ft1.setShape(node1);
-        ft1.setDuration(Duration.seconds(Common.DURATION));
-        ft1.setToValue(Color.YELLOWGREEN);
-
-        FillTransition ft2 = new FillTransition();
-        ft2.setShape(node2);
-        ft2.setDuration(Duration.seconds(Common.DURATION));
-        ft2.setToValue(Color.YELLOWGREEN);
-
-        ParallelTransition pt = new ParallelTransition();
-        pt.getChildren().addAll(ft1, ft2);
-
-        CompareStep s = new CompareStep(pt, pt, "COMPARE ["+ node1.getIndex() + "] & ["+ node2.getIndex() + "]");
+        CompareStep s = new CompareStep(node1, node2);
         s.setNodes(node1, node2);
 
         add(s);
     }
 
-    public void addBucketStep(Animation a, Animation r, Element node1) {
-        Step s = new BucketStep(a, r, "BUCKET");
-        s.setNodes(node1, node1);
+    public void addBucketStep(Element node, int bufferIndex) {
+        Step s = new BucketStep(node, bufferIndex);
+
+        add(s);
+    }
+
+    public void addBucketStep(int bufferIndex, Element node) {
+        Step s = new BucketStep(bufferIndex, node);
 
         add(s);
     }
@@ -112,7 +74,7 @@ public class Steps {
         if (currentStep == null) return;
 
         currentStep.play(() -> {
-            label.setText(currentStep.toString());
+            if (currentStep.getNext()!=null) label.setText(currentStep.getNext().toString());
 
             currentStep = currentStep.getNext();
         });
