@@ -164,6 +164,8 @@ public class Steps {
     public void stop() {
         pause();
 
+        label.setText("");
+
         if (currentStep != null) {
 
             currentStep.stop();

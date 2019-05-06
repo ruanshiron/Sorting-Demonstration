@@ -1,6 +1,5 @@
 package algos;
 
-import core.Algorithm;
 import core.Element;
 import core.ElementArray;
 
@@ -14,7 +13,7 @@ public class Bucket implements Algorithm {
     private Bucket() {
     }
 
-    public void sort(ElementArray arr, Element maxVal) {
+    private void sort(ElementArray arr, Element maxVal) {
         int [] bucket = new int[maxVal.getValue()+1];
         Element [][] bucketElement = new Element[maxVal.getValue()+1][maxVal.getValue()+1];
 
@@ -59,10 +58,6 @@ public class Bucket implements Algorithm {
         sort(array, array.getMax());
     }
 
-    @Override
-    public String getName() {
-        return "Bucket";
-    }
 
     @Override
     public String toString() {

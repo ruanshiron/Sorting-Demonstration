@@ -1,6 +1,5 @@
 package algos;
 
-import core.Algorithm;
 import core.ElementArray;
 
 public class Selection implements Algorithm {
@@ -22,13 +21,8 @@ public class Selection implements Algorithm {
                     minIndex = j;
             }
             array.swap(i, minIndex);
-//            array.setElement(i, SortArray.ElementState.DONE);
+            // Sorted Point
         }
-    }
-
-    @Override
-    public String getName() {
-        return "Selection";
     }
 
     @Override

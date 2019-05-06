@@ -1,8 +1,10 @@
-package core;
+package algos;
+
+import core.ElementArray;
 
 public interface Algorithm {
 
-    String getName();
+    String toString();
 
     void sort(ElementArray array);
 

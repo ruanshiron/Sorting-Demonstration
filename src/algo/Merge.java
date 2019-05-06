@@ -1,7 +1,5 @@
 package algos;
 
-import core.Algorithm;
-import core.Element;
 import core.ElementArray;
 
 public class Merge implements Algorithm {
@@ -19,7 +17,7 @@ public class Merge implements Algorithm {
     }
 
 
-    public void sort(ElementArray arr,int min,int max){
+    private void sort(ElementArray arr,int min,int max){
         if(max-min==0){//only one element.
             //no swap
         }
@@ -37,7 +35,7 @@ public class Merge implements Algorithm {
     }
 
 
-    public void merge(ElementArray arr, int min,int max,int mid){
+    private void merge(ElementArray arr, int min,int max,int mid){
         int i=min;
         while(i<=mid){
             if(arr.compare(i, mid+1) < 0){
@@ -55,10 +53,6 @@ public class Merge implements Algorithm {
         }
     }
 
-    @Override
-    public String getName() {
-        return "Merge";
-    }
 
     @Override
     public String toString() {
