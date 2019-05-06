@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import com.jfoenix.controls.*?>
@@ -16,36 +18,41 @@
    <children>
       <AnchorPane fx:id="fatherPane" layoutX="526.0" layoutY="52.0" prefHeight="289.0" prefWidth="824.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <JFXButton fx:id="playButton" buttonType="RAISED" defaultButton="true" layoutX="387.0" layoutY="462.0" onAction="#handlePlayClicked" prefHeight="60.0" prefWidth="60.0" ripplerFill="#edededb2" style="-fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: FAB000; -fx-background-color: FAB000;" text="PLAY">
+            <JFXButton fx:id="playButton" buttonType="RAISED" layoutX="356.0" layoutY="484.0" onAction="#handlePlayClicked" prefHeight="28.0" prefWidth="90.0" style="-fx-background-color: FAB000;" text="PLAY">
                <font>
-                  <Font size="16.0" />
-               </font></JFXButton>
-            <JFXButton fx:id="backButton" buttonType="RAISED" defaultButton="true" layoutX="270.0" layoutY="462.0" prefHeight="60.0" prefWidth="60.0" ripplerFill="#edededb2" style="-fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: FAB000; -fx-background-color: FAB000;" text="BACK">
-               <font>
-                  <Font size="15.0" />
+                  <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="forwardButton" buttonType="RAISED" defaultButton="true" layoutX="502.0" layoutY="462.0" prefHeight="60.0" prefWidth="60.0" ripplerFill="#f0f0f0b1" style="-fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: FAB000; -fx-background-color: FAB000;" text="FORWARD">
+            <JFXButton fx:id="backwardButton" buttonType="RAISED" layoutX="221.0" layoutY="484.0" onAction="#handleBackwardClicked" prefHeight="28.0" prefWidth="90.0" style="-fx-background-color: FAB000;" text="BACKWARD">
                <font>
-                  <Font size="9.0" />
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="forwardButton" buttonType="RAISED" layoutX="491.0" layoutY="484.0" onAction="#handleForwardClicked" prefHeight="28.0" prefWidth="90.0" style="-fx-background-color: FAB000;" text="FORWARD">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="stepLabel" layoutX="277.0" layoutY="436.0" prefHeight="21.0" prefWidth="357.0" text="STEP: ..." AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0">
+               <font>
+                  <Font name="Monospaced Bold" size="16.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="stopButton" buttonType="RAISED" layoutX="646.0" layoutY="484.0" onAction="#handleStopClicked" prefHeight="28.0" prefWidth="51.0" style="-fx-background-color: RED;" text="STOP" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: E5E2E4;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="824.0" AnchorPane.topAnchor="0.0">
          <children>
-            <JFXTextField fx:id="numberTextField" labelFloat="true" layoutX="20.0" layoutY="200.0" prefHeight="28.0" prefWidth="160.0" promptText="Number of Elements">
-               <font>
-                  <Font name="Roboto" size="14.0" />
-               </font>
-            </JFXTextField>
-            <JFXTextField fx:id="speedTextField" labelFloat="true" layoutX="20.0" layoutY="260.0" prefHeight="28.0" prefWidth="160.0" promptText="Speed">
-               <font>
-                  <Font name="Roboto" size="14.0" />
-               </font>
-            </JFXTextField>
-            <JFXComboBox fx:id="comboBox" layoutX="20.0" layoutY="140.0" prefWidth="160.0" promptText="Sort Type" style="-fx-font-size: 14px;" />
-            <JFXButton fx:id="resetButton" layoutX="20.0" layoutY="334.0" onAction="#handleResetClicked" prefHeight="30.0" prefWidth="160.0" style="-fx-background-color: FAB000;" text="READY" />
+            <JFXComboBox fx:id="comboBox" labelFloat="true" layoutX="20.0" layoutY="142.0" prefWidth="160.0" promptText="Sort Type" />
+            <JFXButton layoutX="20.0" layoutY="344.0" onAction="#handleResetClicked" prefHeight="30.0" prefWidth="160.0" style="-fx-background-color: FAB000;" text="READY" />
+            <JFXSlider fx:id="numberSlider" layoutX="20.0" layoutY="215.0" majorTickUnit="1.0" minorTickCount="1" prefHeight="48.0" prefWidth="160.0" showTickLabels="true" snapToTicks="true" />
+            <Label layoutX="20.0" layoutY="202.0" prefHeight="17.0" prefWidth="108.0" text="Number of Element" />
+            <Label layoutX="20.0" layoutY="272.0" prefHeight="17.0" prefWidth="108.0" text="Speed" />
+            <JFXSlider fx:id="speedSlider" layoutX="20.0" layoutY="285.0" majorTickUnit="1.0" minorTickCount="0" prefHeight="48.0" prefWidth="160.0" showTickLabels="true" snapToTicks="true" />
          </children>
       </AnchorPane>
    </children>
