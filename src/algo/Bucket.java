@@ -29,13 +29,15 @@ public class Bucket implements Algorithm {
         }
 
         int outPos=0;
-        System.out.println();
+
         for (int i=0 ; i<bucket.length; i++) {
 
             if (bucket[i] != 0) {
                 for (int j=0; j<bucket[i]; j++) {
                     arr.swap((bucketElement[i][j]).getIndex(), outPos);
-                    System.out.println(bucketElement[i][j].getIndex() + " "+ outPos);
+
+                    arr.moveFromBufferArray((bucketElement[i][j]).getIndex(), -maxVal.getValue() + arr.getElementAt((bucketElement[i][j]).getIndex()).getValue());
+
                     outPos++;
                 }
 
@@ -44,14 +46,6 @@ public class Bucket implements Algorithm {
             //System.out.print(outPos + " ");
         }
 
-        for (int i=0; i< arr.length(); i++) {
-            arr.moveFromBufferArray(i, -maxVal.getValue() + arr.getElementAt(i).getValue());
-        }
-
-        System.out.println();
-        for (int e: bucket) {
-            System.out.print(e+" ");
-        }
     }
 
     public void sort(ElementArray array) {

@@ -78,6 +78,8 @@ public class Steps {
 
             currentStep = currentStep.getNext();
         });
+
+        label.setText(currentStep.toString());
     }
 
     public void pause() {

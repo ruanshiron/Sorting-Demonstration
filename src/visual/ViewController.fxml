@@ -47,7 +47,7 @@
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: E5E2E4;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="824.0" AnchorPane.topAnchor="0.0">
          <children>
-            <JFXComboBox fx:id="comboBox" labelFloat="true" layoutX="20.0" layoutY="142.0" prefWidth="160.0" promptText="Sort Type" />
+            <JFXComboBox fx:id="comboBox" labelFloat="true" layoutX="20.0" layoutY="142.0" prefWidth="160.0" promptText="Sort Type" style="-fx-font-size: 14px;" />
             <JFXButton layoutX="20.0" layoutY="344.0" onAction="#handleResetClicked" prefHeight="30.0" prefWidth="160.0" style="-fx-background-color: FAB000;" text="READY" />
             <JFXSlider fx:id="numberSlider" layoutX="20.0" layoutY="215.0" majorTickUnit="1.0" minorTickCount="1" prefHeight="48.0" prefWidth="160.0" showTickLabels="true" snapToTicks="true" />
             <Label layoutX="20.0" layoutY="202.0" prefHeight="17.0" prefWidth="108.0" text="Number of Element" />

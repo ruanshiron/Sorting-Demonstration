@@ -17,8 +17,8 @@ public class ElementArray {
             elements[i] = new Element(value);
             elements[i].setIndex(i);
 
-            elements[i].setX(Common.SCENE_WIDTH/2 - Common.DISTANCE * length/2 + i * Common.DISTANCE);
-            elements[i].setY(Common.SCENE_HEIGHT * 0.7 - value * Common.HEIGHT);
+            elements[i].setLayoutX(Common.SCENE_WIDTH/2 - Common.DISTANCE * length/2 + i * Common.DISTANCE);
+            elements[i].setLayoutY(Common.SCENE_HEIGHT * 0.7 - value * Common.HEIGHT);
 
             System.out.print(value + " ");
         }
@@ -86,8 +86,8 @@ public class ElementArray {
         for (Element element: elements) {
             element.setTranslateX(0);
             element.setTranslateY(0);
-            element.setX(element.getX());
-            element.setY(element.getY());
+            element.setLayoutX(element.getLayoutX());
+            element.setLayoutY(element.getLayoutY());
         }
     }
 }
