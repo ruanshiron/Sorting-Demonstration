@@ -15,7 +15,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1024.0" style="-fx-background-color: #F0EDEF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visual.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1024.0" style="-fx-background-color: #F0EDEF; -fx-border-width: 1; -fx-border-color: FAB000;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visual.Controller">
    <children>
       <AnchorPane fx:id="fatherPane" layoutX="526.0" layoutY="52.0" prefHeight="289.0" prefWidth="824.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -45,7 +45,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton contentDisplay="TEXT_ONLY" layoutX="724.0" layoutY="4.0" onAction="#close" prefHeight="20.0" prefWidth="20.0" text="✖" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0">
+            <JFXButton contentDisplay="TEXT_ONLY" layoutX="724.0" layoutY="4.0" onAction="#close" prefHeight="20.0" prefWidth="20.0" ripplerFill="RED" text="✖" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0">
                <padding>
                   <Insets top="1.0" />
                </padding>
@@ -67,15 +67,23 @@
          <children>
             <JFXComboBox fx:id="comboBox" focusColor="#0f9d58" labelFloat="true" layoutX="20.0" layoutY="172.0" prefWidth="160.0" promptText="Sorting Algorithm" style="-fx-font-size: 14px;" unFocusColor="#0f9d58" />
             <JFXButton layoutX="20.0" layoutY="484.0" onAction="#handleResetClicked" prefHeight="30.0" prefWidth="160.0" style="-fx-background-color: FAB000;" text="READY" />
-            <JFXSlider fx:id="numberSlider" layoutX="20.0" layoutY="315.0" majorTickUnit="7.0" minorTickCount="7" prefHeight="48.0" prefWidth="160.0" showTickLabels="true" snapToTicks="true" />
-            <Label layoutX="20.0" layoutY="302.0" prefHeight="17.0" prefWidth="108.0" text="Number of Element" />
-            <Label layoutX="20.0" layoutY="372.0" prefHeight="17.0" prefWidth="108.0" text="Speed" />
-            <JFXSlider fx:id="speedSlider" layoutX="20.0" layoutY="385.0" majorTickUnit="1.0" minorTickCount="0" prefHeight="48.0" prefWidth="160.0" showTickLabels="true" snapToTicks="true" />
-            <JFXRadioButton fx:id="columnRadioButton" layoutX="20.0" layoutY="230.0" text="Column " />
-            <JFXRadioButton fx:id="boxRadioButton" layoutX="20.0" layoutY="265.0" text="Box " />
+            <JFXSlider fx:id="numberSlider" layoutX="52.0" layoutY="345.0" majorTickUnit="7.0" minorTickCount="7" prefHeight="24.0" prefWidth="127.0" snapToTicks="true" />
+            <JFXSlider fx:id="speedSlider" layoutX="53.0" layoutY="385.0" majorTickUnit="1.0" minorTickCount="0" prefHeight="30.0" prefWidth="127.0" snapToTicks="true" />
+            <JFXRadioButton fx:id="columnRadioButton" layoutX="20.0" layoutY="250.0" text="Column " />
+            <JFXRadioButton fx:id="boxRadioButton" layoutX="20.0" layoutY="285.0" text="Box " />
             <ImageView fitHeight="150.0" fitWidth="160.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 20; -fx-border-radius: 20;">
                <image>
-                  <Image url="@name.png" />
+                  <Image url="@assets/name.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="20.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/ruler.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="20.0" layoutY="388.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/speedometer.png" />
                </image>
             </ImageView>
          </children>

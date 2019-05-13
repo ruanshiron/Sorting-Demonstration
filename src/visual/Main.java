@@ -19,7 +19,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, Common.WINDOW_WIDTH, Common.WINDOW_HEIGHT));
         primaryStage.setResizable(false);
 
-        Image icon = new Image(getClass().getResourceAsStream("icon.png"));
+        Image icon = new Image(getClass().getResourceAsStream("assets/icon.png"));
         primaryStage.getIcons().add(icon);
 
         primaryStage.initStyle(StageStyle.TRANSPARENT);
