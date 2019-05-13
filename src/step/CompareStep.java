@@ -5,7 +5,6 @@ import element.Element;
 import javafx.animation.Animation;
 import javafx.animation.ParallelTransition;
 import javafx.animation.TranslateTransition;
-import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 public class CompareStep extends Step {

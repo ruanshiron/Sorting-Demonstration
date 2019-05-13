@@ -3,10 +3,10 @@ package algo;
 import element.ElementArray;
 
 public class Bubble implements Algorithm {
-    private static Bubble Instance = new Bubble();
+    private static Bubble ourInstance = new Bubble();
 
     public static Bubble getInstance() {
-        return Instance;
+        return ourInstance;
     }
 
 

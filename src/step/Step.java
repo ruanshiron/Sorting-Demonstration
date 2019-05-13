@@ -2,7 +2,6 @@ package step;
 
 import element.Element;
 import javafx.animation.Animation;
-import javafx.scene.paint.Color;
 
 public abstract class Step {
 

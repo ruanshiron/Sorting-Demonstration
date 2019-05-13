@@ -22,7 +22,7 @@ public class Main extends Application {
         Image icon = new Image(getClass().getResourceAsStream("icon.png"));
         primaryStage.getIcons().add(icon);
 
-        primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.initStyle(StageStyle.TRANSPARENT);
 
         root.setOnMousePressed(e -> {
             x = e.getSceneX();
