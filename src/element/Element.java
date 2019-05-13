@@ -2,38 +2,32 @@ package element;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 
-public class Element extends VBox implements Comparable {
+public abstract class Element implements Comparable {
     private int value;
 
     private int index;
 
-    private Rectangle rectangle;
+    Rectangle rectangle;
 
-    private Label label;
+    Label label;
 
-    public Element(int value) {
-        super(3);
+    Pane shape;
 
-        super.setWidth(Common.WIDTH);
 
-        super.setHeight(value * Common.HEIGHT);
-
-        rectangle = new Rectangle(Common.WIDTH, value * Common.HEIGHT);
-
-        label = new Label(value + "");
-
+    public Element(int value, int index) {
         this.value = value;
+        this.index = index;
+    }
 
-        label.setFont(Font.font(12));
-
-        super.setAlignment(Pos.BOTTOM_CENTER);
-        super.getChildren().addAll(rectangle, label);
-
+    public Pane getShape() {
+        return shape;
     }
 
     public int getValue() {
@@ -54,7 +48,13 @@ public class Element extends VBox implements Comparable {
         return - value + ((Element)o).value;
     }
 
-    public void setFill(Color color) {
-        rectangle.setFill(color);
+    abstract public void setStateColor(State state);
+
+    public enum Type {
+        COLUMN, BOX
+    }
+
+    public enum State {
+        COMPARE, SWAP, DONE, BUCKET, DEFAULT
     }
 }

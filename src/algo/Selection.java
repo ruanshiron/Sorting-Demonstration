@@ -22,6 +22,7 @@ public class Selection implements Algorithm {
             }
             array.swap(i, minIndex);
             // Sorted Point
+            array.steps.addDoneStep(array.getElementAt(i));
         }
     }
 

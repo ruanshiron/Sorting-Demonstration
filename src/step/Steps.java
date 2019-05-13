@@ -1,7 +1,6 @@
 package step;
 
 import element.Element;
-import javafx.animation.*;
 import javafx.scene.control.Label;
 import java.util.LinkedList;
 
@@ -66,6 +65,12 @@ public class Steps {
         add(s);
     }
 
+    public void addDoneStep(Element node) {
+        Step s = new DoneStep(node);
+
+        add(s);
+    }
+
     public void play() {
         if (isPlaying) return;
 
@@ -126,6 +131,9 @@ public class Steps {
     }
 
     public void stop() {
+
+        if (steps.size() == 0) return;
+
         pause();
 
         label.setText("");

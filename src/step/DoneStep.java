@@ -5,28 +5,26 @@ import element.Element;
 import javafx.animation.Animation;
 import javafx.animation.ParallelTransition;
 import javafx.animation.TranslateTransition;
-import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
-public class CompareStep extends Step {
+public class DoneStep extends Step {
 
-    CompareStep (Element node1, Element node2) {
-        super(node1, node2);
-        this.text = "COMPARE [" + node1.getIndex() + "] & ["+ node2.getIndex() + "]";
-        this.initAnimationAndReverse();
+    DoneStep(Element node) {
+        super(node, node);
+        this.text = "DONE    [" + node1.getIndex() + "]";
+        initAnimationAndReverse();
     }
-
 
     @Override
     void setElementState() {
-        node1.setStateColor(Element.State.COMPARE);
-        node2.setStateColor(Element.State.COMPARE);
+        node1.setStateColor(Element.State.DONE);
+        node2.setStateColor(Element.State.DONE);
     }
 
     @Override
     void reverseElementState() {
-        node1.setStateColor(Element.State.DEFAULT);
-        node2.setStateColor(Element.State.DEFAULT);
+        node1.setStateColor(Element.State.DONE);
+        node2.setStateColor(Element.State.DONE);
     }
 
     @Override
@@ -38,15 +36,8 @@ public class CompareStep extends Step {
         tt1.setByY(-Common.HEIGHT);
         tt1.setNode(node1.getShape());
 
-        TranslateTransition tt2 = new TranslateTransition();
-        tt2.setDuration(Duration.seconds(Common.DURATION/2));
-        tt2.setCycleCount(2);
-        tt2.setAutoReverse(true);
-        tt2.setByY(-Common.HEIGHT);
-        tt2.setNode(node2.getShape());
-
         ParallelTransition pt = new ParallelTransition();
-        pt.getChildren().addAll(tt1, tt2);
+        pt.getChildren().addAll(tt1);
 
         return pt;
     }
@@ -55,5 +46,4 @@ public class CompareStep extends Step {
     Animation makeReverse() {
         return makeAnimation();
     }
-
 }

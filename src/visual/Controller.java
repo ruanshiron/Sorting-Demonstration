@@ -6,16 +6,20 @@ import algo.Merge;
 import algo.Selection;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXSlider;
 import algo.Algorithm;
 import element.Common;
+import element.Element;
 import element.ElementArray;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.Arrays;
@@ -49,7 +53,10 @@ public class Controller implements Initializable {
     private Label stepLabel;
 
     @FXML
-    private JFXButton stopButton;
+    private JFXRadioButton columnRadioButton;
+
+    @FXML
+    private JFXRadioButton boxRadioButton;
 
     private ElementArray array;
 
@@ -63,11 +70,34 @@ public class Controller implements Initializable {
         comboBox.setItems(algoList);
 
         // Slider setting
-        numberSlider.setMax(30);
-        numberSlider.setMin(0);
+        numberSlider.setMax(21);
+        numberSlider.setMin(1);
+        numberSlider.setMajorTickUnit(5);
+        numberSlider.setMinorTickCount(5);
 
         speedSlider.setMax(5);
         speedSlider.setMin(1);
+
+        //Radio Button
+        columnRadioButton.setSelected(true);
+
+        columnRadioButton.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) {
+                Common.ELEMENT_TYPE = Element.Type.COLUMN;
+                boxRadioButton.setSelected(false);
+            } else {
+                boxRadioButton.setSelected(true);
+            }
+        });
+
+        boxRadioButton.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) {
+                Common.ELEMENT_TYPE = Element.Type.BOX;
+                columnRadioButton.setSelected(false);
+            } else {
+                columnRadioButton.setSelected(true);
+            }
+        });
 
         // Customize
         comboBox.getSelectionModel().select(0);
@@ -78,7 +108,7 @@ public class Controller implements Initializable {
 
     public void handleResetClicked() {
         if (array != null) {
-            fatherPane.getChildren().removeAll(array.getAll());
+            fatherPane.getChildren().removeAll(array.getAllShape());
             array.steps.stop();
             array = null;
         }
@@ -93,7 +123,7 @@ public class Controller implements Initializable {
 
         array.steps.setLabel(stepLabel);
 
-        fatherPane.getChildren().addAll(array.getAll());
+        fatherPane.getChildren().addAll(array.getAllShape());
 
         comboBox.getValue().sort(array);
 
@@ -101,15 +131,19 @@ public class Controller implements Initializable {
     }
 
     public void handleBackwardClicked () {
+        if (array == null) return;
+
         array.steps.backward();
     }
 
     public void handleForwardClicked() {
+        if (array == null) return;
         array.steps.forward();
     }
 
-
     public void handlePlayClicked() {
+        if (array == null) return;
+
         if (array.steps.isPlaying) {
             array.steps.pause();
             pressedPauseState();
@@ -129,6 +163,7 @@ public class Controller implements Initializable {
         array.reposition();
     }
 
+
     private void pressedPauseState() {
         playButton.setText("PLAY");
         backwardButton.setDisable(false);
@@ -145,5 +180,13 @@ public class Controller implements Initializable {
         playButton.setText("PLAY");
         backwardButton.setDisable(false);
         forwardButton.setDisable(false);
+    }
+
+    public void minimize(ActionEvent e ) {
+        ((Stage)((JFXButton)e.getSource()).getScene().getWindow()).setIconified(true);
+    }
+
+    public void close() {
+        System.exit(0);
     }
 }

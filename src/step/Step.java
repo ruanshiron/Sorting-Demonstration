@@ -20,12 +20,6 @@ public abstract class Step {
 
     Element node2;
 
-    Step (Animation animation, Animation reverse, String text) {
-        this.animation = animation;
-        this.reverse = reverse;
-        this.text = text;
-    }
-
     Step (Element node1, Element node2) {
         this.node1 = node1;
         this.node2 = node2;
@@ -39,14 +33,11 @@ public abstract class Step {
 
     abstract void setElementState();
 
+    abstract void reverseElementState();
+
     abstract Animation makeAnimation();
 
     abstract Animation makeReverse();
-
-    void reverseElementState() {
-        node1.setFill(Color.BLACK);
-        node2.setFill(Color.BLACK);
-    }
 
     public void playOne(Closure onFinished) {
         if (previous!=null) previous.reverseElementState();

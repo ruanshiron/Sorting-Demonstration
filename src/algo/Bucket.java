@@ -38,6 +38,9 @@ public class Bucket implements Algorithm {
 
                     arr.moveFromBufferArray((bucketElement[i][j]).getIndex(), -maxVal.getValue() + arr.getElementAt((bucketElement[i][j]).getIndex()).getValue());
 
+                    // Sorted Point
+                    arr.steps.addDoneStep(arr.getElementAt(outPos));
+
                     outPos++;
                 }
 

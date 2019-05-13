@@ -18,8 +18,14 @@ public class SwapStep extends Step {
 
     @Override
     void setElementState() {
-        node1.setFill(Color.BLUE);
-        node2.setFill(Color.BLUE);
+        node1.setStateColor(Element.State.SWAP);
+        node2.setStateColor(Element.State.SWAP);
+    }
+
+    @Override
+    void reverseElementState() {
+        node1.setStateColor(Element.State.DEFAULT);
+        node2.setStateColor(Element.State.DEFAULT);
     }
 
     @Override
@@ -27,13 +33,13 @@ public class SwapStep extends Step {
         // Swap Animation
         TranslateTransition tt1 = new TranslateTransition();
         tt1.setDuration(Duration.seconds(Common.DURATION));
-        tt1.setByX(Common.DISTANCE * (node1.getIndex() - node2.getIndex()));
-        tt1.setNode(node1);
+        tt1.setByX((Common.WIDTH + Common.DISTANCE) * (node1.getIndex() - node2.getIndex()));
+        tt1.setNode(node1.getShape());
 
         TranslateTransition tt2 = new TranslateTransition();
         tt2.setDuration(Duration.seconds(Common.DURATION));
-        tt2.setByX(Common.DISTANCE * (- node1.getIndex() + node2.getIndex()));
-        tt2.setNode(node2);
+        tt2.setByX((Common.WIDTH + Common.DISTANCE) * (- node1.getIndex() + node2.getIndex()));
+        tt2.setNode(node2.getShape());
 
         ParallelTransition pt = new ParallelTransition();
         pt.getChildren().addAll(tt1, tt2);
@@ -46,13 +52,13 @@ public class SwapStep extends Step {
         // Swap Reverse
         TranslateTransition tt3 = new TranslateTransition();
         tt3.setDuration(Duration.seconds(Common.DURATION));
-        tt3.setByX(- Common.DISTANCE * (node1.getIndex() - node2.getIndex()));
-        tt3.setNode(node1);
+        tt3.setByX(- (Common.WIDTH + Common.DISTANCE) * (node1.getIndex() - node2.getIndex()));
+        tt3.setNode(node1.getShape());
 
         TranslateTransition tt4 = new TranslateTransition();
         tt4.setDuration(Duration.seconds(Common.DURATION));
-        tt4.setByX(- Common.DISTANCE * (- node1.getIndex() + node2.getIndex()));
-        tt4.setNode(node2);
+        tt4.setByX(- (Common.WIDTH + Common.DISTANCE) * (- node1.getIndex() + node2.getIndex()));
+        tt4.setNode(node2.getShape());
 
         ParallelTransition pt2 = new ParallelTransition();
         pt2.getChildren().addAll(tt3, tt4);

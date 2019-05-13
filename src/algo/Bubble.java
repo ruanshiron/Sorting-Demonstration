@@ -18,6 +18,7 @@ public class Bubble implements Algorithm {
             for (int j = 0; j < i - 1; j++)
                 array.compareAndSwap(j, j + 1);
             // Sorted Point
+            array.steps.addDoneStep(array.getElementAt(i-1));
         }
     }
 

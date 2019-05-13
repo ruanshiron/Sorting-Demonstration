@@ -1,5 +1,6 @@
 package algo;
 
+import element.Element;
 import element.ElementArray;
 
 public class Merge implements Algorithm {
@@ -14,6 +15,10 @@ public class Merge implements Algorithm {
 
     public void sort(ElementArray array) {
         sort(array, 0, array.length() - 1);
+
+        for (Element e: array.getAll()) {
+            array.steps.addDoneStep(e);
+        }
     }
 
 
@@ -30,8 +35,11 @@ public class Merge implements Algorithm {
 
             sort(arr,min,mid);//sort the left side
             sort(arr,mid+1,max);//sort the right side
+
             merge(arr, min, max, mid);//combines them
         }
+
+
     }
 
 
@@ -40,17 +48,24 @@ public class Merge implements Algorithm {
         while(i<=mid){
             if(arr.compare(i, mid+1) < 0){
                 arr.swap(i,mid+1);
+
                 push(arr,mid+1,max);
             }
             i++;
         }
+
     }
 
     private void push(ElementArray arr,int s,int e){
         for(int i=s;i<e;i++){
-            if(arr.compare(i, i+1)<0)
+            if(arr.compare(i, i+1)<0) {
+
                 arr.swap(i,i+1);
+
+            }
+
         }
+
     }
 
 

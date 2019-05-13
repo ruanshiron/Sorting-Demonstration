@@ -1,5 +1,6 @@
 package element;
 
+import javafx.scene.layout.Pane;
 import step.Steps;
 
 
@@ -14,11 +15,11 @@ public class ElementArray {
 
         for (int i = 0; i<length; i++) {
             int value = (int) ( Math.random() * Common.RANDOM ) + 1;
-            elements[i] = new Element(value);
-            elements[i].setIndex(i);
+            elements[i] = Common.ELEMENT_TYPE == Element.Type.COLUMN ? new ColumnElement(value, i) : new BoxElement(value, i);
 
-            elements[i].setLayoutX(Common.SCENE_WIDTH/2 - Common.DISTANCE * length/2 + i * Common.DISTANCE);
-            elements[i].setLayoutY(Common.SCENE_HEIGHT * 0.7 - value * Common.HEIGHT);
+            // Position Element
+            elements[i].getShape().setLayoutX(Common.SCENE_WIDTH/2 - (Common.WIDTH + Common.DISTANCE) * length/2 + i * (Common.WIDTH + Common.DISTANCE));
+            elements[i].getShape().setLayoutY(Common.SCENE_HEIGHT * 0.7 - elements[i].getShape().getPrefHeight());
 
             System.out.print(value + " ");
         }
@@ -26,7 +27,15 @@ public class ElementArray {
         System.out.println();
     }
 
-    public Element [] getAll () {
+    public Pane [] getAllShape () {
+        Pane [] shapes = new Pane[length()];
+        for (int i = 0; i < elements.length; i++) {
+            shapes[i] = elements[i].getShape();
+        }
+        return shapes;
+    }
+
+    public Element [] getAll() {
         return elements;
     }
 
@@ -73,7 +82,7 @@ public class ElementArray {
         return MAX;
     }
 
-    // moveY() replaced
+    // Those methods
     public void moveToBufferArray(int index, int bufferIndex) {
         steps.addBucketStep(elements[index], bufferIndex);
     }
@@ -82,12 +91,13 @@ public class ElementArray {
         steps.addBucketStep(bufferIndex, elements[index]);
     }
 
+    //
     public void reposition() {
         for (Element element: elements) {
-            element.setTranslateX(0);
-            element.setTranslateY(0);
-            element.setLayoutX(element.getLayoutX());
-            element.setLayoutY(element.getLayoutY());
+            element.getShape().setTranslateX(0);
+            element.getShape().setTranslateY(0);
+            element.getShape().setLayoutX(element.getShape().getLayoutX());
+            element.getShape().setLayoutY(element.getShape().getLayoutY());
         }
     }
 }
