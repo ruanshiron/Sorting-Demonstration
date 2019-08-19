@@ -3,242 +3,238 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="717.8230355778672" y="1108.5">step.SwapStep</node>
-    <node x="866.2536454354467" y="2339.0">algo.Selection</node>
-    <node x="276.82303557786724" y="1108.5">step.DoneStep</node>
-    <node x="508.82303557786724" y="1086.0">step.BucketStep</node>
-    <node x="472.56380313489007" y="422.0">step.Step</node>
-    <node x="44.823035577867245" y="1108.5">step.CompareStep</node>
-    <node x="1241.7161454354466" y="2328.0">algo.Bucket</node>
-    <node x="1048.2536454354467" y="2339.0">algo.Bubble</node>
-    <node x="365.32303557786724" y="1338.0">step.Steps</node>
-    <node x="610.2536454354467" y="2306.0">algo.Merge</node>
-    <node x="1129.8230355778674" y="653.5">element.BoxElement</node>
-    <node x="902.3230355778672" y="1800.0">element.ElementArray</node>
-    <node x="927.0036454354467" y="2186.0">algo.Algorithm</node>
-    <node x="927.0638031348901" y="0.0">element.Element</node>
-    <node x="929.8230355778672" y="653.5">element.ColumnElement</node>
+    <node x="705.1238626700682" y="302.0">step.SwapStep</node>
+    <node x="163.05045609152768" y="646.0">algo.Selection</node>
+    <node x="577.9238626700683" y="302.0">step.DoneStep</node>
+    <node x="817.1238626700682" y="302.0">step.BucketStep</node>
+    <node x="614.9660714285715" y="146.0">step.Step</node>
+    <node x="444.9238626700682" y="302.0">step.CompareStep</node>
+    <node x="57.35045609152769" y="646.0">algo.Bucket</node>
+    <node x="286.0504560915277" y="646.0">algo.Bubble</node>
+    <node x="648.4738626700682" y="398.0">step.Steps</node>
+    <node x="388.0504560915277" y="646.0">algo.Merge</node>
+    <node x="158.92386267006816" y="146.0">element.BoxElement</node>
+    <node x="224.42386267006816" y="484.0">element.ElementArray</node>
+    <node x="244.67545609152768" y="560.0">algo.Algorithm</node>
+    <node x="309.11607142857144" y="0.0">element.Element</node>
+    <node x="296.92386267006816" y="146.0">element.ColumnElement</node>
   </nodes>
   <notes />
   <edges>
     <edge source="element.ElementArray" target="element.Element">
-      <point x="-95.57142857142856" y="-168.0" />
-      <point x="918.2516070064387" y="1780.0" />
-      <point x="34.323035577867245" y="1780.0" />
-      <point x="34.323035577867245" y="322.0" />
-      <point x="941.7990972525372" y="322.0" />
-      <point x="-68.76470588235293" y="146.0" />
-    </edge>
-    <edge source="step.Steps" target="step.BucketStep">
-      <point x="38.25" y="-201.0" />
-      <point x="531.0730355778672" y="1288.0" />
-      <point x="603.3230355778672" y="1288.0" />
-      <point x="0.0" y="91.0" />
-    </edge>
-    <edge source="step.Steps" target="step.SwapStep">
-      <point x="89.25" y="-201.0" />
-      <point x="582.0730355778672" y="1308.0" />
-      <point x="861.0730355778672" y="1308.0" />
-      <point x="47.75" y="68.5" />
+      <point x="-53.14285714285711" y="-13.0" />
+      <point x="233.28100552721105" y="464.0" />
+      <point x="148.42386267006816" y="464.0" />
+      <point x="148.42386267006816" y="76.0" />
+      <point x="321.61607142857144" y="76.0" />
+      <point x="-30.0" y="13.0" />
     </edge>
     <edge source="step.Steps" target="step.DoneStep">
-      <point x="-63.75" y="-201.0" />
-      <point x="429.07303557786724" y="1298.0" />
-      <point x="371.32303557786724" y="1298.0" />
-      <point x="0.0" y="68.5" />
+      <point x="-10.649999999999977" y="-13.0" />
+      <point x="673.3238626700683" y="348.0" />
+      <point x="623.9238626700683" y="348.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="step.Steps" target="step.SwapStep">
+      <point x="24.850000000000023" y="-13.0" />
+      <point x="708.8238626700683" y="368.0" />
+      <point x="774.1238626700682" y="368.0" />
+      <point x="23.0" y="13.0" />
+    </edge>
+    <edge source="step.Steps" target="step.BucketStep">
+      <point x="31.94999999999999" y="-13.0" />
+      <point x="715.9238626700683" y="378.0" />
+      <point x="870.1238626700682" y="378.0" />
+      <point x="0.0" y="13.0" />
     </edge>
     <edge source="algo.Merge" target="algo.Algorithm">
-      <point x="78.66666666666663" y="-102.0" />
-      <point x="806.9203121021133" y="2286.0" />
-      <point x="947.2536454354467" y="2286.0" />
-      <point x="-60.75" y="35.0" />
+      <point x="-24.999999999999943" y="-13.0" />
+      <point x="400.55045609152774" y="616.0" />
+      <point x="331.3004560915277" y="616.0" />
+      <point x="37.125" y="13.0" />
     </edge>
     <edge source="step.Steps" target="element.Element">
-      <point x="114.75" y="-201.0" />
-      <point x="607.5730355778672" y="1318.0" />
-      <point x="919.3230355778672" y="1318.0" />
-      <point x="919.3230355778672" y="392.0" />
-      <point x="1010.5638031348901" y="392.0" />
-      <point x="0.0" y="146.0" />
+      <point x="-31.94999999999999" y="-13.0" />
+      <point x="652.0238626700682" y="378.0" />
+      <point x="434.4238626700682" y="378.0" />
+      <point x="434.4238626700682" y="116.0" />
+      <point x="356.61607142857144" y="116.0" />
+      <point x="5.0" y="13.0" />
     </edge>
     <edge source="algo.Bubble" target="element.ElementArray">
-      <point x="40.5" y="-69.0" />
-      <point x="1169.7536454354467" y="2166.0" />
-      <point x="1058.4230355778673" y="2166.0" />
-      <point x="44.59999999999991" y="168.0" />
-    </edge>
-    <edge source="step.Steps" target="step.Step">
-      <point x="-38.25" y="-201.0" />
-      <point x="454.57303557786724" y="1308.0" />
-      <point x="476.32303557786724" y="1308.0" />
-      <point x="476.32303557786724" y="1026.0" />
-      <point x="559.2910758621629" y="1026.0" />
-      <point x="-19.272727272727252" y="267.0" />
+      <point x="20.5" y="-13.0" />
+      <point x="347.5504560915277" y="626.0" />
+      <point x="354.1754560915277" y="626.0" />
+      <point x="354.1754560915277" y="540.0" />
+      <point x="311.2238626700681" y="540.0" />
+      <point x="24.799999999999955" y="13.0" />
     </edge>
     <edge source="step.CompareStep" target="element.Element">
-      <point x="-70.66666666666674" y="-68.5" />
-      <point x="80.1563689112005" y="976.0" />
-      <point x="171.39713646822338" y="976.0" />
-      <point x="171.39713646822338" y="332.0" />
-      <point x="951.6226266643018" y="332.0" />
-      <point x="-58.94117647058829" y="146.0" />
+      <point x="-37.66666666666663" y="-13.0" />
+      <point x="463.7571960034016" y="282.0" />
+      <point x="468.3831941867658" y="282.0" />
+      <point x="468.3831941867658" y="106.0" />
+      <point x="361.61607142857144" y="106.0" />
+      <point x="10.0" y="13.0" />
+    </edge>
+    <edge source="step.Steps" target="step.Step">
+      <point x="-3.5500000000000114" y="-13.0" />
+      <point x="680.4238626700682" y="272.0" />
+      <point x="641.1478896103897" y="272.0" />
+      <point x="-5.818181818181813" y="13.0" />
     </edge>
     <edge source="step.CompareStep" target="step.Step">
-      <point x="0.0" y="-68.5" />
-      <point x="150.82303557786724" y="986.0" />
-      <point x="482.2001667712537" y="986.0" />
-      <point x="-96.36363636363637" y="267.0" />
+      <point x="37.666666666666686" y="-13.0" />
+      <point x="539.0905293367349" y="272.0" />
+      <point x="623.6933441558442" y="272.0" />
+      <point x="-23.272727272727252" y="13.0" />
     </edge>
     <edge source="element.ElementArray" target="element.BoxElement">
-      <point x="95.57142857142867" y="-168.0" />
-      <point x="1109.3944641492958" y="1780.0" />
-      <point x="1213.3230355778674" y="1780.0" />
-      <point x="0.0" y="35.5" />
+      <point x="-35.428571428571445" y="-13.0" />
+      <point x="250.99529124149672" y="454.0" />
+      <point x="211.92386267006816" y="454.0" />
+      <point x="0.0" y="13.0" />
     </edge>
     <edge source="element.ColumnElement" target="element.Element">
-      <point x="-42.0" y="-35.5" />
-      <point x="971.8230355778672" y="402.0" />
-      <point x="1020.3873325466549" y="402.0" />
-      <point x="9.823529411764753" y="146.0" />
+      <point x="31.75" y="-13.0" />
+      <point x="392.17386267006816" y="126.0" />
+      <point x="351.61607142857144" y="126.0" />
+      <point x="0.0" y="13.0" />
     </edge>
     <edge source="element.BoxElement" target="element.Element">
-      <point x="-41.75" y="-35.5" />
-      <point x="1171.5730355778674" y="372.0" />
-      <point x="1059.6814501937138" y="372.0" />
-      <point x="49.11764705882365" y="146.0" />
+      <point x="26.5" y="-13.0" />
+      <point x="238.42386267006816" y="96.0" />
+      <point x="331.61607142857144" y="96.0" />
+      <point x="-20.0" y="13.0" />
     </edge>
     <edge source="step.BucketStep" target="element.Element">
-      <point x="63.0" y="-91.0" />
-      <point x="666.3230355778672" y="1066.0" />
-      <point x="757.5638031348901" y="1066.0" />
-      <point x="757.5638031348901" y="372.0" />
-      <point x="990.9167443113607" y="372.0" />
-      <point x="-19.64705882352939" y="146.0" />
+      <point x="35.33333333333337" y="-13.0" />
+      <point x="905.4571960034016" y="192.0" />
+      <point x="859.6900732452073" y="192.0" />
+      <point x="859.6900732452073" y="56.0" />
+      <point x="386.61607142857144" y="56.0" />
+      <point x="35.0" y="13.0" />
     </edge>
     <edge source="step.SwapStep" target="element.Element">
-      <point x="63.66666666666663" y="-68.5" />
-      <point x="877.2359283486121" y="382.0" />
-      <point x="1000.7402737231255" y="382.0" />
-      <point x="-9.823529411764639" y="146.0" />
-    </edge>
-    <edge source="algo.Merge" target="element.Element">
-      <point x="-78.66666666666663" y="-102.0" />
-      <point x="649.58697876878" y="2286.0" />
-      <point x="0.0" y="2286.0" />
-      <point x="0.0" y="312.0" />
-      <point x="931.9755678407724" y="312.0" />
-      <point x="-78.58823529411768" y="146.0" />
+      <point x="30.666666666666686" y="-13.0" />
+      <point x="781.7905293367348" y="222.0" />
+      <point x="741.2327380952382" y="222.0" />
+      <point x="741.2327380952382" y="66.0" />
+      <point x="381.61607142857144" y="66.0" />
+      <point x="30.0" y="13.0" />
     </edge>
     <edge source="algo.Bucket" target="algo.Algorithm">
-      <point x="-79.125" y="-80.0" />
-      <point x="1268.0911454354466" y="2276.0" />
-      <point x="1068.753645435447" y="2276.0" />
-      <point x="60.750000000000114" y="35.0" />
+      <point x="30.75" y="-13.0" />
+      <point x="129.1004560915277" y="616.0" />
+      <point x="257.0504560915277" y="616.0" />
+      <point x="-37.125" y="13.0" />
+    </edge>
+    <edge source="algo.Merge" target="element.Element">
+      <point x="25.000000000000057" y="-13.0" />
+      <point x="450.55045609152774" y="626.0" />
+      <point x="933.6238626700682" y="626.0" />
+      <point x="933.6238626700682" y="46.0" />
+      <point x="391.61607142857144" y="46.0" />
+      <point x="40.0" y="13.0" />
     </edge>
     <edge source="step.Steps" target="step.CompareStep">
-      <point x="-89.25" y="-201.0" />
-      <point x="403.57303557786724" y="1308.0" />
-      <point x="203.82303557786724" y="1308.0" />
-      <point x="53.0" y="68.5" />
+      <point x="-24.850000000000023" y="-13.0" />
+      <point x="659.1238626700682" y="368.0" />
+      <point x="473.1738626700682" y="368.0" />
+      <point x="-28.25" y="13.0" />
     </edge>
     <edge source="algo.Algorithm" target="element.ElementArray">
-      <point x="1.1368683772161603E-13" y="-35.0" />
-      <point x="1008.003645435447" y="2166.0" />
-      <point x="1013.8230355778672" y="2166.0" />
-      <point x="0.0" y="168.0" />
+      <point x="0.0" y="-13.0" />
+      <point x="294.1754560915277" y="540.0" />
+      <point x="286.42386267006816" y="540.0" />
+      <point x="0.0" y="13.0" />
     </edge>
     <edge source="step.SwapStep" target="step.Step">
-      <point x="-63.66666666666663" y="-68.5" />
-      <point x="749.6563689112006" y="1056.0" />
-      <point x="655.6547122257991" y="1056.0" />
-      <point x="77.09090909090912" y="267.0" />
-    </edge>
-    <edge source="element.ElementArray" target="element.ColumnElement">
-      <point x="0.0" y="-168.0" />
-      <point x="0.0" y="35.5" />
+      <point x="-30.666666666666686" y="-13.0" />
+      <point x="720.4571960034016" y="242.0" />
+      <point x="658.6024350649351" y="242.0" />
+      <point x="11.636363636363626" y="13.0" />
     </edge>
     <edge source="step.BucketStep" target="step.Step">
-      <point x="-63.0" y="-91.0" />
-      <point x="540.3230355778672" y="1056.0" />
-      <point x="617.1092576803446" y="1056.0" />
-      <point x="38.545454545454504" y="267.0" />
+      <point x="-35.33333333333334" y="-13.0" />
+      <point x="834.7905293367348" y="212.0" />
+      <point x="670.2387987012988" y="212.0" />
+      <point x="23.27272727272731" y="13.0" />
     </edge>
     <edge source="step.DoneStep" target="element.Element">
-      <point x="-63.0" y="-68.5" />
-      <point x="308.32303557786724" y="976.0" />
-      <point x="399.56380313489007" y="976.0" />
-      <point x="399.56380313489007" y="342.0" />
-      <point x="961.4461560760666" y="342.0" />
-      <point x="-49.117647058823536" y="146.0" />
+      <point x="-30.66666666666663" y="-13.0" />
+      <point x="593.2571960034015" y="252.0" />
+      <point x="552.6994047619048" y="252.0" />
+      <point x="552.6994047619048" y="96.0" />
+      <point x="366.61607142857144" y="96.0" />
+      <point x="15.0" y="13.0" />
     </edge>
     <edge source="algo.Bucket" target="element.Element">
-      <point x="79.12500000000006" y="-80.0" />
-      <point x="1426.3411454354468" y="2286.0" />
-      <point x="1501.6878151260503" y="2286.0" />
-      <point x="1501.6878151260503" y="342.0" />
-      <point x="1089.1520384290077" y="342.0" />
-      <point x="78.58823529411757" y="146.0" />
+      <point x="-10.25" y="-13.0" />
+      <point x="88.10045609152769" y="616.0" />
+      <point x="26.0" y="616.0" />
+      <point x="26.0" y="66.0" />
+      <point x="316.61607142857144" y="66.0" />
+      <point x="-35.0" y="13.0" />
     </edge>
-    <edge source="element.ElementArray" target="step.Steps">
-      <point x="-31.85714285714289" y="-168.0" />
-      <point x="981.9658927207244" y="1760.0" />
-      <point x="556.5730355778672" y="1760.0" />
-      <point x="63.75" y="201.0" />
+    <edge source="element.ElementArray" target="element.ColumnElement">
+      <point x="17.714285714285666" y="-13.0" />
+      <point x="304.1381483843538" y="444.0" />
+      <point x="360.42386267006816" y="444.0" />
+      <point x="0.0" y="13.0" />
     </edge>
     <edge source="step.Step" target="element.Element">
-      <point x="53.0" y="-267.0" />
-      <point x="631.5638031348901" y="362.0" />
-      <point x="981.093214899596" y="362.0" />
-      <point x="-29.470588235294144" y="146.0" />
+      <point x="-16.0" y="-13.0" />
+      <point x="630.9660714285715" y="86.0" />
+      <point x="371.61607142857144" y="86.0" />
+      <point x="20.0" y="13.0" />
+    </edge>
+    <edge source="element.ElementArray" target="step.Steps">
+      <point x="53.14285714285711" y="-13.0" />
+      <point x="339.56671981292527" y="464.0" />
+      <point x="701.7238626700682" y="464.0" />
+      <point x="17.75" y="13.0" />
     </edge>
     <edge source="algo.Selection" target="element.ElementArray">
-      <point x="-40.499999999999886" y="-69.0" />
-      <point x="906.7536454354467" y="2276.0" />
-      <point x="916.5036454354467" y="2276.0" />
-      <point x="916.5036454354467" y="2166.0" />
-      <point x="969.2230355778672" y="2166.0" />
-      <point x="-44.60000000000002" y="168.0" />
+      <point x="-25.75" y="-13.0" />
+      <point x="188.80045609152768" y="540.0" />
+      <point x="261.6238626700682" y="540.0" />
+      <point x="-24.799999999999955" y="13.0" />
     </edge>
     <edge source="algo.Selection" target="algo.Algorithm">
-      <point x="40.500000000000114" y="-69.0" />
-      <point x="-20.25" y="35.0" />
+      <point x="25.75" y="-13.0" />
+      <point x="240.30045609152768" y="626.0" />
+      <point x="281.8004560915277" y="626.0" />
+      <point x="-12.375" y="13.0" />
     </edge>
     <edge source="algo.Bubble" target="algo.Algorithm">
-      <point x="-40.5" y="-69.0" />
-      <point x="1088.7536454354467" y="2286.0" />
-      <point x="1028.253645435447" y="2286.0" />
-      <point x="20.250000000000114" y="35.0" />
+      <point x="-20.5" y="-13.0" />
+      <point x="12.375" y="13.0" />
     </edge>
     <edge source="algo.Bucket" target="element.ElementArray">
-      <point x="-26.375" y="-80.0" />
-      <point x="1320.8411454354466" y="2286.0" />
-      <point x="1286.8161454354467" y="2286.0" />
-      <point x="1286.8161454354467" y="2156.0" />
-      <point x="1103.0230355778672" y="2156.0" />
-      <point x="89.20000000000005" y="168.0" />
+      <point x="10.25" y="-13.0" />
+      <point x="108.60045609152769" y="606.0" />
+      <point x="135.55045609152768" y="606.0" />
+      <point x="135.55045609152768" y="530.0" />
+      <point x="236.82386267006814" y="530.0" />
+      <point x="-49.60000000000002" y="13.0" />
     </edge>
     <edge source="step.DoneStep" target="step.Step">
-      <point x="63.0" y="-68.5" />
-      <point x="434.32303557786724" y="1016.0" />
-      <point x="540.0183485894356" y="1016.0" />
-      <point x="-38.545454545454504" y="267.0" />
+      <point x="0.0" y="-13.0" />
+      <point x="623.9238626700683" y="282.0" />
+      <point x="629.5115259740261" y="282.0" />
+      <point x="-17.45454545454544" y="13.0" />
     </edge>
     <edge source="algo.Merge" target="element.ElementArray">
-      <point x="0.0" y="-102.0" />
-      <point x="728.2536454354467" y="2156.0" />
-      <point x="924.6230355778672" y="2156.0" />
-      <point x="-89.20000000000005" y="168.0" />
+      <point x="5.6843418860808015E-14" y="-13.0" />
+      <point x="425.55045609152774" y="530.0" />
+      <point x="336.0238626700682" y="530.0" />
+      <point x="49.60000000000002" y="13.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.3250000000000002" x="805.4313725490197" y="2428.9483065953655" />
-  <SelectedNodes>
-    <node>algo.Bubble</node>
-  </SelectedNodes>
-  <Categories>
-    <Category>Fields</Category>
-    <Category>Constructors</Category>
-    <Category>Methods</Category>
-  </Categories>
+  <settings layout="Hierarchic Group" zoom="0.8049132947976878" x="467.0" y="336.0" />
+  <SelectedNodes />
+  <Categories />
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>
 </Diagram>
